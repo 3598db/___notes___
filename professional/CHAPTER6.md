@@ -56,6 +56,7 @@ function createPerson(name) {
   return o;
 }
 ```
+
 ### 6.2.2 构造函数模式
 ```javascript
 function Person(name) {
@@ -103,6 +104,7 @@ Object.getPrototypeOf()
 hasOwenProperty()
 @return Boolean
 ```
+
 2.原型与`in`操作符
 
 `in`: 如果该属性在对象中能访问到返回`true`,无论该对象存在于实例还是原型中
@@ -198,7 +200,153 @@ function Person(name) {
 >许多OO语言都支持两种继承方式: 接口继承和实现继承. 接口继承只继承方法签名, 而实现继承则继承实际的方法. 如前所述, 由于函数没有签名, 在ECMAScript中无法实现接口继承.
 
 ### 6.3.1 原型链
+ECMAScript中描述了原型链的概念, 并将原型链作为实现继承的主要方法. 其基本思想是利用原型让一个引用类型继承另一个引用类型的属性和方法. 简单回顾一下构造函数, 原型和实例的关系: 每个构造函数都有一个原型对象, 原型对象都包含一个指向构造函数的指针, 而实例都包含一个指向原型对象的内部指针. 那么, 假如我们让原型对象等于另一个类型的实例, 结果会怎么样呢? 显然, 此时的原型对象将包含一个指向另一个原型的指针, 相应地, 另一个原型中也包含着一个指向另一个构造函数的指针. 假如另一个原型又是另一个类型的实例, 那么上述关系依然成立, 如此层层递进, 就构成了实例与原型的链条. 这就是所谓原型链的基本概念.
+```javascript
+function SuperType() {
+  this.property = true;
+}
+
+SuperType.prototype.getSuperValue = () => { this.property }
+
+function SubType() {
+  this.subproperty = false;
+}
+
+SubType.prototype = new SuperType();
+
+SubType.prototype.getSubValue = () => { this.subproperty }
+
+const instance = new SubType();
+instance.getSuperValue() // true
+```
+>需要注意`instance.constructors`现在指向的是`SuperType`. 因为`SubType`的原型指向另一个对象--`SuperType`的原型, 而这个原型对象的`constructor`属性指向的`SuperType`.
 
 
+1.别忘记默认的原型   
+所有引用类型都默认继承了Object
+
+2.确定原型和实例的关系
+```javascript
+instance instanceof Object;    // true
+instance instanceof SuperType; // true
+instance instanceof SubType;   // true
+
+Object.prototype.isPrototypeOf(instance);     // true
+SuperType.prototype.isPrototypeOf(instance);  // true
+SubType.prototype.isPrototypeOf(instance);    // true
+```
+
+3.谨慎的定义方法   
+子类型有时候需要覆盖超类型中的某种方法, 或者需要添加超类型中不存在的某个方法. 但是不管怎么样, 给原型添加方法的代码一定要放在替换原型的语句之后.
+
+4.原型链的问题   
+一) 包含引用类型的原型属性会被所有实例共享. 在通过原型来实现继承时, 原型实际上会变成另一个类型的实例. 于是, 原先的实力属性也就顺理成章的变成了现在的原型属性了.
+二) 在创建子类型的实例时, 不能向超类型的构造函数传递参数. 实际上, 应该说是没有办法在不影响所有对象实例的情况下, 给超类型的构造函数传递参数.
+
+### 6.3.2 借用构造函数
+在子类构造函数的内部调用超类型的构造函数.
+```javascript
+function SuperType() {
+  this.colors = ['red', 'blue'];
+}
+
+function SubType() {
+  SuperType.call(this);
+}
+
+const instanceOne = new SubType();
+instanceOne.colors.push('black');
+
+instanceOne.colors; // ['red', 'blue', 'black']
+
+const instanceTwo = new SubType();
+instanceTwo.colors; // ['red', 'blue']
+```
+
+1.传递参数
+```javascript
+function SuperType(name) {
+  this.name = name;
+}
+
+function SubType() {
+  SuperType.call(this, 'gmz');
+}
+
+const instance = new SubType();
+instance.name; // 'gmz'
+```
+
+2.借用构造函数的问题
+一) 没有函数复用
+二) 无法继承原型链中的属性方法
+
+### 6.3.3 组合继承
+```javascript
+function SuperType(name) {
+  this.colors = ['red', 'blue'];
+  this.name = name;
+}
+
+SuperType.prototype.getName = () => { this.name };
+
+function SubType(name) {
+  SuperType.call(this, name);
+}
+
+// 实际上此步会在SubType.prototype上创建不必要的构造函数属性
+SubType.prototype = new SuperType();
+
+const instance = new SubType('gmz');
+instance.getName(); // 'gmz'
+```
+
+### 6.3.4 原型式继承
+```javascript
+function object(o) {
+  function fn() {}
+
+  fn.prototype = o;
+
+  return new fn();
+}
+
+// ECMAScript5 规范了该方法
+Object.create()
+```
+
+### 6.3.5 寄生式继承
+```javascript
+function createAnother(original) {
+  const clone = object(original);
+  clone.sayHi = () => { 'hi' };
+
+  return clone;
+}
+```
+
+### 6.3.6 寄生组合式继承
+```javascript
+function inheritPrototype(subType, superType) {
+  const prototype = object(superType.prototype);
+  prototype.constructor = subType;
+  subType.prototype = prototype;
+}
 
 
+function SuperType(name) {
+  this.colors = ['red', 'blue'];
+  this.name = name;
+}
+
+SuperType.prototype.getName = () => { this.name };
+
+function SubType(name) {
+  SuperType.call(this, name);
+}
+
+inheritPrototype(SubType, SuperType);
+
+const instance = new SubType('gmz');
+instance.getName(); // 'gmz'
+```
