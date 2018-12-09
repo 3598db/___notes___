@@ -24,5 +24,36 @@ export default function VueGlobalError(handle) {
   };
   return VueGlobalErrorHandlePlugin;
 }
-
 ```
+Usage
+```javascript
+// in main.js
+
+Vue.use(VueGlobalError(err=>{
+  // handle global error
+}))
+```
+```javascript
+function maybeAsyncError() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => Math.random() > 0.5 ? resolve() : reject('async throw error'), 100)
+  })
+}
+
+// in component
+export default {
+
+  method:{
+    async fn() {
+      throw 'sync throw error'
+    },
+    async fn1(){
+      await maybeAsyncError()
+    }
+  }
+
+}
+```
+
+
+
