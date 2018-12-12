@@ -1,7 +1,17 @@
 # Summary
 
-* [Introduction](README.md)
-* [ECMAScript2015](es6/README.md)
-* [High Performance Javascript](high-performance/README.md)
-* [Professional Javascript](professional/README.md)
-
+* [介绍](readme.md)
+* [ECMAScript2015](es6/readme.md)
+* [高性能Javascript](high-performance/readme.md)
+* [Javascript高级程序设计](professional/readme.md)
+  * [第六章: 面向对象的程序设计](professional/chapter6.md)
+  * [第七章: 函数表达式](professional/chapter7.md)
+  * [第十三章: 事件](professional/chapter13.md)
+* [布局](layout/readme.md)
+  * [Flex布局](layout/flex.md)
+* [杂项](other/readme.md)
+  * [自定义事件与触发](other/fireEvent.md)
+  * [Vue中的异步错误处理](other/vueAsyncErrorHandler.md)
+  * [Webpack杂项](other/webpack.md)
+* [HTML5](html5/readme.md)
+  * [HTML新特性](html5/newFeaturesOfHtml5.md)
