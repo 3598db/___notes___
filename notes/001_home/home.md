@@ -1,0 +1,70 @@
+# CHANGELOG :spiral_notepad:
+## [2020-04-04] 新增部分HTML5 API笔记
+* 新增window.performance
+
+## [2020-04-05] Proxy，Reflect总结
+* 总结了proxy对象api及操作
+* 总结了Reflect对象api及操作
+* 新增Event对象
+* position属性解析
+`
+## [2020-04-06] reduce实现
+* 总结了Array.prototype.reduce用法与实现
+
+## [2020-04-08] JSON.stringify总结
+* 总结了JSON.stringify细节与用法
+
+## [2020-04-09] Promise并发控制(未完成) Iterator
+* 读p-limit源码 了解Promise并发控制实现机制
+* 总结可迭代协议与迭代器协议
+
+## [2020-04-12] 可迭代协议与迭代器协议
+* 梳理iterator与for...of
+* 梳理Generator概念及应用(未完待续)
+* Generator与异步(未开始)
+
+## [2020-04-13] 梳理字符串，数字，函数的扩展
+* 梳理字符串扩展及新增方法
+* 梳理数字扩展
+* 梳理函数扩展
+
+## [2020-04-14] 整理数组的方法(未完成)
+* 梳理数组方法的使用和注意事项
+
+## [2020-04-15] 整理对象的扩展(未完成) 读snabbdom源码
+* 梳理对象扩展的使用和注意事项
+* snabbdom codereview 梳理虚拟dom创建和patch流程 diff算法细节
+
+## [2020-04-16] 一个关于LazyMan的故事
+* 从面试题切入实现一个简单的LazyMan
+* 深入理解LazyMan及用法(待完成)
+
+## [2020-04-19] snabbdom源码文档 vue源码学习 动态规划初探 其他未完成任务收尾
+* 完成snabbdom源码code review文档
+* vue源码学习
+* 初探动态规划算法
+* 其他任务收尾
+
+## [2020-04-21] 动态规划算法题草稿 vue-cli3使用总结<Badge text="新"/>
+* 开始总结动态规划算法题思路，培养动态规划思想
+* 总结vue-cli3用法
+
+# IDEA :bulb:
+* 使用cz控制代码提交质量
+* 读完你不知道的JavaScript
+* 读深入理解计算机系统
+* IntersectionObserver
+* 项目优化总结
+* 从输入url到看到整个界面经历过程（巨精细，从光信号转换为电信号开始_(:з」∠)_）
+* https详解
+* ~~diff算法~~
+* ~~virtual dom~~
+* 二叉树基础算法题
+* 动态规划/分治/贪心/回溯
+* react
+* ~~LazyMan~~
+* webpack性能优化及生命周期
+* webpack各种模块化实现与requirejs
+* HMR
+* 计算机进程与线程
+* 点亮所有博客前面的星星（深入不够或非原创） <Badge text="新"/>
