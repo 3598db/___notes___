@@ -1,20 +1,20 @@
 # CHANGELOG :spiral_notepad:
-## [2020-04-04] 新增部分HTML5 API笔记
-* 新增window.performance
+## [2020-04-04] 新增部分HTML5API笔记
+* 新增window.performance总结文档
 
 ## [2020-04-05] Proxy，Reflect总结
 * 总结了proxy对象api及操作
 * 总结了Reflect对象api及操作
 * 新增Event对象
 * position属性解析
-`
+
 ## [2020-04-06] reduce实现
 * 总结了Array.prototype.reduce用法与实现
 
 ## [2020-04-08] JSON.stringify总结
 * 总结了JSON.stringify细节与用法
 
-## [2020-04-09] Promise并发控制(未完成) Iterator
+## [2020-04-09] Promise并发控制 Iterator
 * 读p-limit源码 了解Promise并发控制实现机制
 * 总结可迭代协议与迭代器协议
 
@@ -45,9 +45,15 @@
 * 初探动态规划算法
 * 其他任务收尾
 
-## [2020-04-21] 动态规划算法题草稿 vue-cli3使用总结<Badge text="新"/>
+## [2020-04-21] 动态规划算法题草稿 vue-cli3使用总结
 * 开始总结动态规划算法题思路，培养动态规划思想
 * 总结vue-cli3用法
+
+## [2020-04-23] p-limit分析文档
+* 输出p-limit分析文档
+
+## [2020-04-24] generator函数异步应用<Badge text="新"/>
+* generator函数异步应用实现分析 thunk函数 co模块
 
 # IDEA :bulb:
 * 使用cz控制代码提交质量

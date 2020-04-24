@@ -91,12 +91,13 @@ module.exports = {
           'notes/005_es6/005001_stringExtension',
           'notes/005_es6/005002_stringMethods',
           'notes/005_es6/005003_numberExtension',
+          'notes/005_es6/005004_generator',
+          'notes/005_es6/005005_generator',
           'notes/005_es6/functionExtension',
           'notes/005_es6/arrayMethods',
           'notes/005_es6/objectExtension',
           'notes/005_es6/proxy',
           'notes/005_es6/reflect',
-          'notes/005_es6/iterator',
         ]
       },
       {
@@ -131,6 +132,7 @@ module.exports = {
           'notes/008_algorithm/otherArrayOperations',
           'notes/008_algorithm/interviewQuestion',
           'notes/008_algorithm/dynamicProgramming',
+          'notes/008_algorithm/draft',
         ]
       },
       {

@@ -37,17 +37,5 @@ Web Performance API允许网页访问某些函数来测量网页和Web应用程�
 * `PerformanceTiming.loadEventEnd` - 是一个无符号long long 型的毫秒数，返回当load事件结束，即加载事件完成时的Unix毫秒时间戳。如果这个事件还未被发送，或者尚未完成，它的值将会是0.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+参考链接
+* [MDN > Web API 接口参考 > Performance](https://developer.mozilla.org/zh-CN/docs/Web/API/Performance)

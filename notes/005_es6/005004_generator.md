@@ -1,4 +1,4 @@
-# :star:可迭代协议与迭代器协议
+# :star:Generator函数：协议与语法
 [[toc]]
 ## 概括：可迭代协议与迭代器协议
 
@@ -275,6 +275,3 @@ obj[Symbol.iterator] = function* () {
 1. `generator[Symbol.iterator]`存在且`generator[Symbol.iterator]() === generator` (可迭代对象)
 2. `generator.next`存在 (迭代器)
 
-## Generator函数与异步
-
-## 总结
