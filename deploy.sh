@@ -14,7 +14,7 @@ echo 'blog.m1n9z.cn' > CNAME
 
 git init
 git add -A
-git commit -m '>Update _'
+git commit -m 'Every day is different'
 
 # 如果发布到 https://<USERNAME>.github.io
 git push -f git@github.com:muronggoudan/muronggoudan.github.io.git master
