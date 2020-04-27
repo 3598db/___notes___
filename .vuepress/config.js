@@ -116,7 +116,7 @@ module.exports = {
         ]
       },
       {
-        title: '网路协议',
+        title: '网络协议',
         collapsable: false,
         children: [
           'notes/007_networkProtocol/httpNote',
@@ -160,7 +160,8 @@ module.exports = {
         title: 'Vue Code Review' ,
         collapsable: false,
         children: [
-          'notes/014_vueCodeReview/014001_preparatoryWork',
+          'notes/010_vue/vueCodeReview/010001001_codereview',
+          'notes/010_vue/vueCodeReview/010001002_codereview',
         ]
       },
       {
