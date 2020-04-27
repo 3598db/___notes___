@@ -93,6 +93,7 @@ module.exports = {
           'notes/005_es6/005003_numberExtension',
           'notes/005_es6/005004_generator',
           'notes/005_es6/005005_generator',
+          'notes/005_es6/005006_generator',
           'notes/005_es6/functionExtension',
           'notes/005_es6/arrayMethods',
           'notes/005_es6/objectExtension',
@@ -142,7 +143,6 @@ module.exports = {
           'notes/009_node/nodemodule',
           'notes/009_node/packagejsonMainModueAndBrowser',
           'notes/009_node/koa-compose',
-          'notes/009_node/co',
           'notes/009_node/egg',
         ]
       },
