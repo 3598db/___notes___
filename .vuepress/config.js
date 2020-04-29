@@ -162,6 +162,7 @@ module.exports = {
         children: [
           'notes/010_vue/vueCodeReview/010001001_codereview',
           'notes/010_vue/vueCodeReview/010001002_codereview',
+          'notes/010_vue/vueCodeReview/010001003_codereview',
         ]
       },
       {

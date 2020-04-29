@@ -260,75 +260,53 @@ Vue.prototype._render = function (): VNode {
 ```
 
 ## reactiveGetter
-```js {26}
-function defineReactive (
-  obj,
-  key,
-  val,
-  customSetter,
-  shallow
-) {
-  var dep = new Dep();
-
-  var property = Object.getOwnPropertyDescriptor(obj, key);
-  if (property && property.configurable === false) {
-    return
-  }
-
-  // cater for pre-defined getter/setters
-  var getter = property && property.get;
-  var setter = property && property.set;
-  if ((!getter || setter) && arguments.length === 2) {
-    val = obj[key];
-  }
-
-  var childOb = !shallow && observe(val);
-  Object.defineProperty(obj, key, {
-    enumerable: true,
-    configurable: true,
-    get: function reactiveGetter () {
-      var value = getter ? getter.call(obj) : val;
-      if (Dep.target) {
-        dep.depend();
-        if (childOb) {
-          childOb.dep.depend();
-          if (Array.isArray(value)) {
-            dependArray(value);
-          }
-        }
+```js {5}
+function reactiveGetter () {
+  var value = getter ? getter.call(obj) : val;
+  // 触发依赖收集 其实每一次求值都会重新收集一次
+  if (Dep.target) {
+    dep.depend();
+    if (childOb) {
+      childOb.dep.depend();
+      if (Array.isArray(value)) {
+        dependArray(value);
       }
-      return value
-    },
-    set: function reactiveSetter (newVal) {
-      var value = getter ? getter.call(obj) : val;
-      if (newVal === value || (newVal !== newVal && value !== value)) {
-        return
-      }
-      if (customSetter) {
-        customSetter();
-      }
-      if (getter && !setter) { return }
-      if (setter) {
-        setter.call(obj, newVal);
-      } else {
-        val = newVal;
-      }
-      childOb = !shallow && observe(newVal);
-      dep.notify();
     }
-  });
+  }
+  return value
 }
 ```
 
+## Dep.prototype.depend
+```js {4}
+Dep.prototype.depend = function depend () {
+  // 调用watcher对象的addDep方法
+  if (Dep.target) {
+    Dep.target.addDep(this);
+  }
+};
+```
 
+## Watcher.prototype.addDep
+```js {9}
+Watcher.prototype.addDep = function addDep (dep: Dep) {
+  var id = dep.id;
+  // 我觉得目前这么做的目的主要是每次get求值都会触发依赖收集
+  // 防止重复订阅
+  if (!this.newDepIds.has(id)) {
+    this.newDepIds.add(id);
+    this.newDeps.push(dep);
+    if (!this.depIds.has(id)) {
+      dep.addSub(this);
+    }
+  }
+};
+```
 
-
-
-
-
-
-
-
-
-
-
+## Dep.prototype.addSub
+```js {3}
+// 将watcher放入依赖集合
+Dep.prototype.addSub = function addSub (sub: Watcher) {
+  this.subs.push(sub);
+};
+```
