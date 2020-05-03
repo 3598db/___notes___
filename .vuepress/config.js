@@ -88,17 +88,42 @@ module.exports = {
         title: 'ECMAScript6',
         collapsable: false,
         children: [
+          // 字符串的扩展
           'notes/005_es6/005001_stringExtension',
+          // 字符串的新增方法
           'notes/005_es6/005002_stringMethods',
+          // 数值的扩展
           'notes/005_es6/005003_numberExtension',
-          'notes/005_es6/005004_generator',
-          'notes/005_es6/005005_generator',
-          'notes/005_es6/005006_generator',
-          'notes/005_es6/functionExtension',
-          'notes/005_es6/arrayMethods',
-          'notes/005_es6/objectExtension',
-          'notes/005_es6/proxy',
-          'notes/005_es6/reflect',
+          // 函数的扩展
+          'notes/005_es6/005004_functionExtension',
+          // 数组的扩展
+          'notes/005_es6/005005_arrayMethods',
+          // 对象的扩展
+          'notes/005_es6/005006_objectExtension',
+          // 对象的新增方法
+          'notes/005_es6/005007_objectMethods',
+          // Symbol
+          'notes/005_es6/005008_symbol',
+          // Set & Map
+          'notes/005_es6/005009_setmap',
+          // Proxy
+          'notes/005_es6/005010_proxy',
+          // Reflect
+          'notes/005_es6/005011_reflect',
+          // Promise
+          'notes/005_es6/005012_promise',
+          // generator
+          'notes/005_es6/005013_generator',
+          'notes/005_es6/005014_generator',
+          'notes/005_es6/005015_generator',
+          // async函数
+          'notes/005_es6/005016_async',
+          // class
+          'notes/005_es6/005017_class',
+          // module
+          'notes/005_es6/005018_module',
+          // decorator
+          'notes/005_es6/005019_decorator',
         ]
       },
       {
