@@ -1,4 +1,4 @@
-# Promise's Polyfill (from community)
+# Promise polyfill from community
 ```javascript
 import promiseFinally from './finally';
 

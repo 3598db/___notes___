@@ -1,4 +1,4 @@
-# :star:对象的方法
+# :memo:对象的方法
 
 ## Object.assign()
 ## Object.create()

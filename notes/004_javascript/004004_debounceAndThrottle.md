@@ -1,5 +1,5 @@
-# 防抖与节流
-
+# :star:防抖与节流
+[[toc]]
 ## Debounce - 防抖
 
 以下是完善版本   
@@ -83,7 +83,24 @@ function throttle(fn, wait) {
 }
 ```
 
-## 对比
-电梯超时现象解释两者区别
-- throttle策略:保证如果电梯第1个人进来后,15秒后准时送一次,不等待。如果没有人,则待机;
-- debounce策略:如果电梯有人进来,等待15秒,如果又有人进来,重新计时15秒,直到15秒超时都没有人再进来,则开始运送.
+### 专业版本
+```js
+function throttle(fn, delay, atleast) {
+  let timer = null;
+  let previous = null;
+  return function() {
+    let context = this, args = arguments;
+    let now = +new Date();
+    if (!previous) previous = now;
+    if (now - previous < atleast) {
+      fn.apply(context, args);
+      previous = now;
+    } else {
+      clearTimeout(timer);
+      timer = setTimeout(function() {
+        fn.apply(context, args)
+      }, delay)
+    }
+  }
+}
+```

@@ -1,5 +1,5 @@
-# Query String & Form Data & Request Payload
-
+# :star:Query String & Form Data & Request Payload
+[[toc]]
 ## 1. GET请求
 ```
 RequestURL:http://127.0.0.1:8080/test/test.do?name=mikan&address=street
@@ -71,7 +71,7 @@ Request Payload
 ```
 默认的Content-Type: application/json; 而且参数存放在了Request Payload
 
-总结
+## 总结
 1. 文件上传我们需要框架的支持,这里就不多说了
 2. 我们可以设置ContentType为"application/x-www-form-urlencoded" (通用)
 3. ContentType为"application/json" 是以Json格式传输数据,我们后台可以使用@RequestBody 注解接受

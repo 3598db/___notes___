@@ -1,6 +1,6 @@
-# :star:Performance
+# :star:Performance API
+[[toc]]
 Web Performance API允许网页访问某些函数来测量网页和Web应用程序的性能，包括 Navigation Timing API和高分辨率时间数据。
-
 ## `performance.timing`
 是一个PerformanceTiming 对象,包含延迟相关的性能信息。
 

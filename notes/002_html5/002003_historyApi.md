@@ -1,5 +1,5 @@
-# :star:History
-
+# :star:History API
+[[toc]]
 ## API
 
 ### 向前和向后跳转

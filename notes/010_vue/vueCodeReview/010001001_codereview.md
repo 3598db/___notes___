@@ -1,4 +1,4 @@
-# :star:Vue源码解析（一）：主流程
+# :memo:Vue源码解析（一）：主流程
 [[toc]]
 
 ## new Vue

@@ -1,4 +1,4 @@
-# :star:Vue源码解析（三）：更新流程
+# :memo:Vue源码解析（三）：更新流程
 [[toc]]
 ## reactiveSetter
 ```js {14}

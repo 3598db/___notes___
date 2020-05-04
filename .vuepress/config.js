@@ -26,31 +26,42 @@ module.exports = {
         collapsable: false,
         children: [
           'notes/002_html5/002001_newFeaturesOfHTML5',
-          'notes/002_html5/002002_draggableApi',
           'notes/002_html5/002003_historyApi',
           'notes/002_html5/002004_performanceApi',
           'notes/002_html5/002005_storageApi',
           'notes/002_html5/002006_event',
+          'notes/002_html5/002002_draggableApi',
+          'notes/002_html5/002007_intersectionObserverApi',
+          'notes/002_html5/002008_messageChannelApi',
         ]
       },
       {
         title: 'Layout',
         collapsable: false,
         children: [
+          'notes/003_layout/003001_flex',
+          'notes/003_layout/003002_generalLayoutScheme',
+          'notes/003_layout/003003_position',
+          'notes/003_layout/003004_grailLayout',
           'notes/003_layout/css3GpuHardwareAccelerated',
-          'notes/003_layout/flex',
-          'notes/003_layout/generalLayoutScheme',
           'notes/003_layout/pointerEvents',
           'notes/003_layout/cssDebuggerWithOneLineCode',
-          'notes/003_layout/position',
         ]
       },
       {
         title: 'Javascript',
         collapsable: false,
         children: [
+          'notes/004_javascript/004001_non-recursionClone',
+          'notes/004_javascript/004002_aboutLazyMan',
+          'notes/004_javascript/004003_arrayPrototypeReduce',
+          'notes/004_javascript/004007_aboutReduce',
+          'notes/004_javascript/004004_debounceAndThrottle',
+          'notes/004_javascript/004005_jsonStringify',
+          'notes/004_javascript/004006_promiseLimit',
+          'notes/004_javascript/004008_extensionCompare',
+          'notes/004_javascript/004009_eventloopInBrowserOrNodejs',
           'notes/004_javascript/clone',
-          'notes/004_javascript/debounceAndThrottle',
           'notes/004_javascript/eventloop',
           'notes/004_javascript/nextTick',
           'notes/004_javascript/fireEvent',
@@ -59,21 +70,20 @@ module.exports = {
           'notes/004_javascript/operatorIn',
           'notes/004_javascript/momentjs',
           'notes/004_javascript/functionOverload',
-          'notes/004_javascript/arrayPrototypeReduce',
-          'notes/004_javascript/jsonStringify',
-          'notes/004_javascript/promiseLimit',
-          'notes/004_javascript/aboutLazyMan'
         ]
       },
       {
         title: 'Polyfill',
         collapsable: false,
         children: [
-          'notes/004_javascript/polyfill/_promise',
-          'notes/004_javascript/polyfill/bind',
-          'notes/004_javascript/polyfill/callAndApply',
-          'notes/004_javascript/polyfill/new',
+          'notes/004_javascript/polyfill/mypromise',
           'notes/004_javascript/polyfill/promise',
+          'notes/004_javascript/polyfill/bind',
+          'notes/004_javascript/polyfill/call',
+          'notes/004_javascript/polyfill/apply',
+          'notes/004_javascript/polyfill/new',
+          'notes/004_javascript/polyfill/const',
+          'notes/004_javascript/polyfill/instanceof',
         ]
       },
       {
@@ -130,11 +140,8 @@ module.exports = {
         title: 'FrontEnd',
         collapsable: false,
         children: [
-          'notes/006_frontend/cache',
-          'notes/006_frontend/complexity',
+          'notes/006_frontend/006001_frommemorycacheAndFromdiskcache',
           'notes/006_frontend/curl',
-          'notes/006_frontend/frommemorycacheAndFromdiskcache',
-          'notes/006_frontend/interface',
           'notes/006_frontend/mime',
           'notes/006_frontend/wireshark',
           'notes/006_frontend/dollarInChrome',
@@ -144,41 +151,48 @@ module.exports = {
         title: '网络协议',
         collapsable: false,
         children: [
-          'notes/007_networkProtocol/httpNote',
-          'notes/007_networkProtocol/cookie',
+          'notes/007_networkProtocol/007001_cookie',
+          'notes/007_networkProtocol/007002_httpNote',
+          'notes/007_networkProtocol/007003_queryStringAndFormDataAndRequestPayload',
+          'notes/007_networkProtocol/007004_tcp',
+          'notes/007_networkProtocol/007005_https',
+          'notes/007_networkProtocol/007006_http2',
+          'notes/007_networkProtocol/007007_websocket',
+          'notes/007_networkProtocol/007008_requestProcess',
+          'notes/007_networkProtocol/httpCache',
           'notes/007_networkProtocol/localhostAnd127.0.0.1',
-          'notes/007_networkProtocol/queryStringAndFormDataAndRequestPayload.md',
         ]
       },
       {
         title: '算法',
         collapsable: false,
         children: [
-          'notes/008_algorithm/arraySort',
+          'notes/008_algorithm/008001_complexity',
+          'notes/008_algorithm/008002_arraySort',
+          'notes/008_algorithm/008003_arrayFlat',
+          'notes/008_algorithm/008004_dynamicProgramming',
+          'notes/008_algorithm/008005_draft',
           'notes/008_algorithm/otherArrayOperations',
           'notes/008_algorithm/interviewQuestion',
-          'notes/008_algorithm/dynamicProgramming',
-          'notes/008_algorithm/draft',
         ]
       },
       {
         title: 'Node',
         collapsable: false,
         children: [
+          'notes/009_node/009001_koa-compose',
           'notes/009_node/nodemodule',
           'notes/009_node/packagejsonMainModueAndBrowser',
-          'notes/009_node/koa-compose',
-          'notes/009_node/egg',
         ]
       },
       {
         title: 'Vue',
         collapsable: false,
         children: [
+          'notes/010_vue/010001_snabbdomCodeReview',
+          'notes/010_vue/010002_vueCli3',
+          'notes/010_vue/010003_vueMini',
           'notes/010_vue/vueAsyncErrorHandler',
-          'notes/010_vue/vueMini',
-          'notes/010_vue/snabbdomCodeReview',
-          'notes/010_vue/vueCli3',
         ]
       },
       {
@@ -202,15 +216,18 @@ module.exports = {
         title: '工程化',
         collapsable: false,
         children: [
-          'notes/011_engineering/webpack/dy',
+          'notes/011_engineering/011001_optimize',
+          'notes/011_engineering/011002_hmr',
+          'notes/011_engineering/011003_devServer',
+          'notes/011_engineering/011004_babel',
         ]
       },
       {
         title: '前端安全',
         collapsable: false,
         children: [
-          'notes/012_webSecurity/xss',
-          'notes/012_webSecurity/csrf',
+          'notes/012_webSecurity/012001_xss',
+          'notes/012_webSecurity/012002_csrf',
         ]
       },
       {

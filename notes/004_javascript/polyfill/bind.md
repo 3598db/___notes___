@@ -1,40 +1,24 @@
-# Function.prototype.bind's Polyfill
+# Function.prototype.bind
 
-## Syntax
+```js
+Function.prototype.bind = function (context) {
 
-### `Function.prototype.bind()`
+  if (typeof this !== "function") {
+    throw new Error("Function.prototype.bind - what is trying to be bound is not callable");
+  }
 
-### Usage
-```javascript
-fun.bind(thisArg[, arg1[, arg2[, ...]]])
-```
+  var _this = this;
+  var args = Array.prototype.slice.call(arguments, 1);
 
-### Parameters
+  var fNOP = function () {};
 
-- `thisArg`   
-调用绑定函数时作为`this`参数传递给目标函数的值。 如果使用`new`运算符构造绑定函数，则忽略该值。当使用`bind`在`setTimeout`中创建一个函数（作为回调提供）时，作为`thisArg`传递的任何原始值都将转换为`object`。如果没有提供绑定的参数，则执行作用域的`this`被视为新函数的`thisArg`。
+  var fBound = function () {
+    var bindArgs = Array.prototype.slice.call(arguments);
+    return _this.apply(this instanceof fNOP ? this : context, args.concat(bindArgs));
+  }
 
-- `arg1, arg2, ...`   
-当绑定函数被调用时，这些参数将置于实参之前传递给被绑定的方法。
-
-### Return value
-返回由指定的`this`值和初始化参数改造的原函数拷贝
-
----
-## Polyfill
-```javascript
-Function.prototype._bind = function (thisArg, ...params) {
-  // function = this
-  const fn = this;
-
-  return function (...args) {
-    const allArgs = [...params, ...args];
-
-    fn.apply(thisArg, allArgs);
-  };
-
+  fNOP.prototype = this.prototype;
+  fBound.prototype = new fNOP();
+  return fBound;
 }
 ```
-
-
-

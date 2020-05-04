@@ -1,4 +1,4 @@
-# Promise's Polyfill
+# My Promise polyfill (undone
 ```javascript
 const PENDING = 'pending';
 const RESOLVED = 'resolved';
@@ -64,21 +64,3 @@ function _Promise() {
 
 }
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

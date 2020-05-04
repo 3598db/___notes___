@@ -1,1 +1,1 @@
-# :star:Decorator
+# :memo:Decorator

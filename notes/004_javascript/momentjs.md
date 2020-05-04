@@ -1,4 +1,4 @@
-# [momentjs]安利一个时间格式化插件
+# 安利一个时间格式化插件
 
 ## 文档
 [momentjs](http://momentjs.com/docs/) - 可惜文档是英文的, 读起来有一点费力.

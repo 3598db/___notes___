@@ -1,4 +1,5 @@
-# from memory cache与from disk cache详解
+# :star:from memory cache与from disk cache详解
+[[toc]]
 在chrome浏览器中的控制台Network中size栏通常会有三种状态
 >- `from memory cache`
 >- `from disk cache`

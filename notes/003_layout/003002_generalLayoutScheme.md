@@ -1,4 +1,4 @@
-# 常规布局方案总结
+# :star:常规布局方案总结
 
 ## 水平居中
 ### a) inline-block + text-align

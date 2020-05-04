@@ -1,4 +1,7 @@
 # 一些面试题吧算是
+[[toc]]
+
+## 找出数组中第k大和第m大的数字相加之和
 ```js
 /**
  * 找出数组中第k大和第m大的数字相加之和
@@ -13,6 +16,7 @@ function findTopSum(arr, k, m) {
 }
 ```
 
+## 按条件合并相邻项
 ```js
 /**
  * 按条件合并相邻项
@@ -26,6 +30,7 @@ function adjoin(arr, condition) {
 }
 ```
 
+## 实现一个EatMan
 ```js
 /**
  * 实现一个EatMan
@@ -55,3 +60,13 @@ function _eatman(name) {
 }
 ```
 
+## 统计字符串中出现最多的字母与个数
+```javascript
+// reduce解法
+let s = 'amjdeswfsw';
+Array.prototype.reduce.call(s,(prev,next)=>{
+  if(prev[next]) prev[next] ++;
+  else prev[next] = 1;
+  return prev;
+},{});
+```
