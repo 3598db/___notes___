@@ -63,9 +63,11 @@
 * Vue源码流程分析：主流程
 * Vue源码流程分析：响应式系统
  
-## [2020-04-29] Vue源码流程分析<Badge text="新"/>
+## [2020-04-29] Vue源码流程分析
 * Vue源码流程分析：更新流程
 
+## [2020-05-05] 整理ES6、算法、网络、工程化等模块笔记<Badge text="新"/>
+* 汇总笔记
 
 # IDEA :bulb:
 * 点亮所有博客前面的星星（深入不够或非原创或理解错误） <Badge text="重要"/>
@@ -86,7 +88,8 @@
 * webpack各种模块化实现与requirejs
 * HMR
 * 计算机进程与线程
-* pwa新标准总结<Badge text="新"/>
-* 前端圈腾讯视频扫荡<Badge text="新"/>
-* 尤雨溪知乎<Badge text="新"/>
-* reduce用法总结
+* pwa新标准总结
+* 前端圈腾讯视频扫荡
+* 尤雨溪知乎
+* reduce用法总结<Badge text="新"/>
+* serviceWorker<Badge text="新"/>

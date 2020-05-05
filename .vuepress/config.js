@@ -1,4 +1,4 @@
-module.exports = {
+const config = {
   title: "DailyClack:))",
   description: "Do not go gentle into that good night.",  
   port: '9000',
@@ -19,6 +19,7 @@ module.exports = {
         collapsable: false,
         children: [
           'notes/001_home/home',
+          'notes/001_home/bookmark',
         ]
       },
       {
@@ -159,7 +160,7 @@ module.exports = {
           'notes/007_networkProtocol/007006_http2',
           'notes/007_networkProtocol/007007_websocket',
           'notes/007_networkProtocol/007008_requestProcess',
-          'notes/007_networkProtocol/httpCache',
+          'notes/007_networkProtocol/007009_httpCache',
           'notes/007_networkProtocol/localhostAnd127.0.0.1',
         ]
       },
@@ -172,6 +173,9 @@ module.exports = {
           'notes/008_algorithm/008003_arrayFlat',
           'notes/008_algorithm/008004_dynamicProgramming',
           'notes/008_algorithm/008005_draft',
+          'notes/008_algorithm/008006_dataStructure',
+          'notes/008_algorithm/008007_arraySortPlus',
+          'notes/008_algorithm/008009_binaryTree',
           'notes/008_algorithm/otherArrayOperations',
           'notes/008_algorithm/interviewQuestion',
         ]
@@ -181,6 +185,7 @@ module.exports = {
         collapsable: false,
         children: [
           'notes/009_node/009001_koa-compose',
+          'notes/009_node/009002_nodebestpractices',
           'notes/009_node/nodemodule',
           'notes/009_node/packagejsonMainModueAndBrowser',
         ]
@@ -311,3 +316,10 @@ module.exports = {
     ]
   }
 }
+
+// 收起
+// config.themeConfig.sidebar.forEach((item) => {
+//   item.collapsable = true;
+// })
+
+module.exports = config;
