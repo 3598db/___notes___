@@ -3,7 +3,7 @@ const config = {
   description: "Do not go gentle into that good night.",  
   port: '9000',
   head: [
-    ['link', { rel: 'icon', href: '/favicon.png' }]
+    ['link', { rel: 'icon', href: '/img/favicon.png' }]
   ],
   themeConfig: {
     nav: [

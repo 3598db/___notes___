@@ -526,7 +526,7 @@ function removeVnodes(parentElm, vnodes, startIdx, endIdx) {
 
 ## diff算法图示
 软件画图啥的太麻烦了，还不如手写来的直接。（我也不知道为啥图是_(:з」∠)_倒的。）
-![](/diff.jpeg)
+![](/img/diff.jpeg)
 
 ## patchVnode核心流程
-![](/patchVnode.jpeg)
+![](/img/patchVnode.jpeg)
