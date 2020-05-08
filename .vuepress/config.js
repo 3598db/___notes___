@@ -62,6 +62,8 @@ const config = {
           'notes/004_javascript/004006_promiseLimit',
           'notes/004_javascript/004008_extensionCompare',
           'notes/004_javascript/004009_eventloopInBrowserOrNodejs',
+          'notes/004_javascript/004010_completeAssign',
+          'notes/004_javascript/004011_createAndAssignInExtends',
           'notes/004_javascript/clone',
           'notes/004_javascript/eventloop',
           'notes/004_javascript/nextTick',
@@ -85,6 +87,7 @@ const config = {
           'notes/004_javascript/polyfill/new',
           'notes/004_javascript/polyfill/const',
           'notes/004_javascript/polyfill/instanceof',
+          'notes/004_javascript/polyfill/create'
         ]
       },
       {
