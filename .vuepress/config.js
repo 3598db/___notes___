@@ -239,6 +239,13 @@ const config = {
         ]
       },
       {
+        title: '转载内容梳理',
+        collapsable: false,
+        children: [
+          'notes/020_reprint/inputUrlToDisplay',
+        ]
+      },
+      {
         title: '[读书笔记]你不知道的JavaScript',
         collapsable: false,
         children: [
@@ -304,18 +311,25 @@ const config = {
           'notes/400_designPatterns/proxy',
         ]
       },
+      // {
+      //   title: '键圈日记',
+      //   collapsable: false,
+      //   children: [
+      //     'notes/500_keyboard/spKeycaps',
+      //     'notes/500_keyboard/gmkKeycaps',
+      //     'notes/500_keyboard/artisan',
+      //     'notes/500_keyboard/keyboard',
+      //     'notes/500_keyboard/collection',
+      //     'notes/500_keyboard/nintendo',
+      //   ]
+      // },
       {
-        title: '键圈日记',
+        title: '树莓派',
         collapsable: false,
         children: [
-          'notes/500_keyboard/spKeycaps',
-          'notes/500_keyboard/gmkKeycaps',
-          'notes/500_keyboard/artisan',
-          'notes/500_keyboard/keyboard',
-          'notes/500_keyboard/collection',
-          'notes/500_keyboard/nintendo',
+          'notes/600_RaspberryPi/raspberryPiNote',
         ]
-      },
+      }
     ]
   }
 }
