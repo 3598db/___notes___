@@ -23,6 +23,15 @@ const config = {
         ]
       },
       {
+        title: '掘墓' ,
+        collapsable: false,
+        children: [
+          'notes/000_secret/000001_fe',
+          'notes/000_secret/000002_es',
+          'notes/000_secret/000003_react',
+        ]
+      },
+      {
         title: 'HTML5',
         collapsable: false,
         children: [
@@ -73,6 +82,7 @@ const config = {
           'notes/004_javascript/operatorIn',
           'notes/004_javascript/momentjs',
           'notes/004_javascript/functionOverload',
+          'notes/004_javascript/004013_80percent',
         ]
       },
       {
