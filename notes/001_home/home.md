@@ -76,6 +76,13 @@
 
 ## [2020-06-24] [读]80%应聘者不及格系列：闭包
 
+## [2020-06-30] Performance API 与 HTML文档的生命周期
+## [2020-07-03] [读]200行代码实现前端无痕埋点
+## [2020-07-15] 网上都说操作真实 DOM 慢，但测试结果却比 React 更快，为什么？
+## [2020-07-21] 骨架屏方案
+## [2020-07-30] 进程间通信的几种方式
+## [2020-08-11] 数据包大小对网络的影响 —— MTU 与 MSS 的奥秘
+## [2020-01-11] Git标准化实践
 
 # IDEA :bulb:
 * 点亮所有博客前面的星星（深入不够或非原创或理解错误） <Badge text="重要"/>
@@ -101,3 +108,8 @@
 * 尤雨溪知乎
 * reduce用法总结<Badge text="新"/>
 * serviceWorker<Badge text="新"/>
+
+# TODO
+* react: Fiber Reconcile vs. Stack Reconcile
+* react事件机制
+* service worker / pwa / web worker

@@ -43,6 +43,7 @@ const config = {
           'notes/002_html5/002002_draggableApi',
           'notes/002_html5/002007_intersectionObserverApi',
           'notes/002_html5/002008_messageChannelApi',
+          'notes/002_html5/002009_performanceApiAndHtmlLifecycle',
         ]
       },
       {
@@ -83,6 +84,7 @@ const config = {
           'notes/004_javascript/momentjs',
           'notes/004_javascript/functionOverload',
           'notes/004_javascript/004013_80percent',
+          'notes/004_javascript/004014_advantagesOfVirtualDom',
         ]
       },
       {
@@ -175,6 +177,7 @@ const config = {
           'notes/007_networkProtocol/007008_requestProcess',
           'notes/007_networkProtocol/007009_httpCache',
           'notes/007_networkProtocol/localhostAnd127.0.0.1',
+          'notes/007_networkProtocol/007010_tcp',
         ]
       },
       {
@@ -238,7 +241,11 @@ const config = {
           'notes/011_engineering/011002_hmr',
           'notes/011_engineering/011003_devServer',
           'notes/011_engineering/011004_babel',
-        ]
+          'notes/011_engineering/011006_feSeamlessBuryingPoint',
+          'notes/011_engineering/011007_skeletonScreenSolution',
+          'notes/011_engineering/011008_vueProjectPerformanceOptimization',
+          'notes/011_engineering/011009_gitBestPractices',
+          ]
       },
       {
         title: '前端安全',
@@ -308,6 +315,7 @@ const config = {
         collapsable: false,
         children: [
           'notes/300_computer/base',
+          'notes/300_computer/300001_ipc',
         ]
       },
       {
