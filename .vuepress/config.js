@@ -18,7 +18,8 @@ const config = {
         title: '首页',
         collapsable: false,
         children: [
-          'notes/001_home/home',
+          'notes/001_home/changelog',
+          'notes/001_home/todos',
           'notes/001_home/bookmark',
         ]
       },
@@ -54,8 +55,8 @@ const config = {
           'notes/003_layout/003002_generalLayoutScheme',
           'notes/003_layout/003003_position',
           'notes/003_layout/003004_grailLayout',
+          'notes/003_layout/003005_pointerEvents',
           'notes/003_layout/css3GpuHardwareAccelerated',
-          'notes/003_layout/pointerEvents',
           'notes/003_layout/cssDebuggerWithOneLineCode',
         ]
       },
@@ -88,6 +89,20 @@ const config = {
         ]
       },
       {
+        title: '标准库',
+        collapsable: false,
+        children: [
+          'notes/004_javascript/standardLibrary/',
+        ]
+      },
+      {
+        title: '函数式编程',
+        collapsable: false,
+        children: [
+          'notes/004_javascript/functional/compose',
+        ]
+      },
+      {
         title: 'Polyfill',
         collapsable: false,
         children: [
@@ -106,7 +121,11 @@ const config = {
         title: '模块化',
         collapsable: false,
         children: [
-          'notes/004_javascript/modularization/CMDstandard',
+          'notes/004_javascript/modularization/AMD',
+          'notes/004_javascript/modularization/CMD',
+          'notes/004_javascript/modularization/CJS',
+          'notes/004_javascript/modularization/ESM',
+          'notes/004_javascript/modularization/UMD',
           'notes/004_javascript/modularization/commonjsAndAmdAndEs6module',
         ]
       },
@@ -192,6 +211,7 @@ const config = {
           'notes/008_algorithm/008006_dataStructure',
           'notes/008_algorithm/008007_arraySortPlus',
           'notes/008_algorithm/008009_binaryTree',
+          'notes/008_algorithm/008010_summary',
           'notes/008_algorithm/otherArrayOperations',
           'notes/008_algorithm/interviewQuestion',
         ]
@@ -207,30 +227,31 @@ const config = {
         ]
       },
       {
-        title: 'Vue',
+        title: '框架',
         collapsable: false,
         children: [
-          'notes/010_vue/010001_snabbdomCodeReview',
-          'notes/010_vue/010002_vueCli3',
-          'notes/010_vue/010003_vueMini',
-          'notes/010_vue/vueAsyncErrorHandler',
+          'notes/010_framework/010001_snabbdomCodeReview',
+          'notes/010_framework/010002_vueCli3',
+          'notes/010_framework/010003_vueMini',
+          'notes/010_framework/010004_reactQA',
+          'notes/010_framework/vueAsyncErrorHandler',
         ]
       },
       {
         title: 'Vue Code Review' ,
         collapsable: false,
         children: [
-          'notes/010_vue/vueCodeReview/010001001_codereview',
-          'notes/010_vue/vueCodeReview/010001002_codereview',
-          'notes/010_vue/vueCodeReview/010001003_codereview',
+          'notes/010_framework/vueCodeReview/010001001_codereview',
+          'notes/010_framework/vueCodeReview/010001002_codereview',
+          'notes/010_framework/vueCodeReview/010001003_codereview',
         ]
       },
       {
         title: 'Vue Api Review',
         collapsable: false,
         children: [
-          'notes/010_vue/vueApiReview/essentials',
-          'notes/010_vue/vueApiReview/componentsInDepth',
+          'notes/010_framework/vueApiReview/essentials',
+          'notes/010_framework/vueApiReview/componentsInDepth',
         ]
       },
       {
@@ -245,6 +266,8 @@ const config = {
           'notes/011_engineering/011007_skeletonScreenSolution',
           'notes/011_engineering/011008_vueProjectPerformanceOptimization',
           'notes/011_engineering/011009_gitBestPractices',
+          'notes/011_engineering/011010_microFe',
+          'notes/011_engineering/011011_upload',
           ]
       },
       {
@@ -292,6 +315,19 @@ const config = {
           'notes/100_readingNotes/professional/chapter7',
           'notes/100_readingNotes/professional/chapter13',
           'notes/100_readingNotes/professional/chapter14',
+        ]
+      },
+      {
+        title: '[读书笔记]浏览器工作原理与实战',
+        collapsable: false,
+        children: [
+          'notes/100_readingNotes/browser/macroPerspective',
+          'notes/100_readingNotes/browser/executionMechanism',
+          'notes/100_readingNotes/browser/howV8Works',
+          'notes/100_readingNotes/browser/eventLoop',
+          'notes/100_readingNotes/browser/pageInBrowser',
+          'notes/100_readingNotes/browser/networkInBrowser',
+          'notes/100_readingNotes/browser/browserSecurity',
         ]
       },
       {

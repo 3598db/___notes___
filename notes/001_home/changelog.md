@@ -1,4 +1,4 @@
-# CHANGELOG :spiral_notepad:
+# CHANGELOG :vulcan_salute:
 ## [2020-04-04] 新增部分HTML5API笔记
 * 新增window.performance总结文档
 
@@ -83,33 +83,3 @@
 ## [2020-07-30] 进程间通信的几种方式
 ## [2020-08-11] 数据包大小对网络的影响 —— MTU 与 MSS 的奥秘
 ## [2020-01-11] Git标准化实践
-
-# IDEA :bulb:
-* 点亮所有博客前面的星星（深入不够或非原创或理解错误） <Badge text="重要"/>
-* 使用cz控制代码提交质量
-* 读完你不知道的JavaScript
-* 读深入理解计算机系统
-* ~~IntersectionObserver~~
-* 项目优化总结
-* 从输入url到看到整个界面经历过程（巨精细，从光信号转换为电信号开始_(:з」∠)_）
-* https详解
-* ~~diff算法~~
-* ~~virtual dom~~
-* 二叉树基础算法题
-* 动态规划/分治/贪心/回溯
-* react
-* ~~LazyMan~~
-* webpack性能优化及生命周期
-* webpack各种模块化实现与requirejs
-* HMR
-* 计算机进程与线程
-* pwa新标准总结
-* 前端圈腾讯视频扫荡
-* 尤雨溪知乎
-* reduce用法总结<Badge text="新"/>
-* serviceWorker<Badge text="新"/>
-
-# TODO
-* react: Fiber Reconcile vs. Stack Reconcile
-* react事件机制
-* service worker / pwa / web worker
