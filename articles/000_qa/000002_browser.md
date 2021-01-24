@@ -60,3 +60,33 @@ CSRF安全问题的主要原因是，cookie会在浏览器请求cookie path匹�
 ## 实现一个宽高自适应的正方形
 
 ## 如何生成一次性链接
+
+## URL
+
+* DNS域名解析
+    * 递归查询：浏览器缓存 -> 本地hosts缓存 -> 本地DNS解析器缓存 -> 本地DNS服务器
+    * 迭代查询：本地DNS服务器 -> 根域名服务器 | 顶级域名服务器 | 权威域名服务器
+
+* TCP握手
+    * 第一次握手：报文SYN位标注为1，Sequence Number为x，客户端状态：SYN_SEND
+    * 第二次握手：报文SYN位标注为1，Acknowledgment Number为 x + 1，Sequence Number为y，服务端状态：SYN_RECV
+    * 第三次握手：Acknowledgment Number为y + 1，客户端和服务端都进入ESTABLISHED状态
+
+* SSL握手
+    * 客户端发送协议版本 会话ID 加密组件 压缩方法 初始随机数
+    * 服务器发送证书 
+
+* 协商缓存
+
+* TCP挥手
+    * 客户端设置Sequence Number，和Acknowledgment Number，FIN报文段为1，进入FIN_WAIT_1状态
+    * 服务端返回Sequence Number + 1，和Acknowledgment Number + 1，进入FIN_WAIT_2状态
+    * 服务端向客户端发送FIN报文，并且状态切换为LAST_ACK状态
+    * 客户端收到服务端发送的FIN报文，服务端发送ACK报文，进如TIME_WAIT状态，服务端收到报文之后就关闭链接。客户端等待2MSL依然没有收到回复后，关闭
+
+* 浏览器渲染
+    * HTML解析器开始解析HTML字节流
+    * 渲染引擎解析css生成样式表
+    * 按照层叠上下文规则创建层树LayerTree
+    * 
+

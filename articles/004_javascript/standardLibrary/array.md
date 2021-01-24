@@ -1,4 +1,5 @@
-# Array
+# :thinking:Array
+
 [[toc]]
 
 ## 静态属性

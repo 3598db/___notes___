@@ -53,6 +53,15 @@ const config = {
         ]
       },
       {
+        title: '标准库',
+        collapsable: false,
+        children: [
+          'articles/004_javascript/standardLibrary/array',
+          'articles/004_javascript/standardLibrary/object',
+          'articles/004_javascript/standardLibrary/promise',
+        ]
+      },
+      {
         title: 'Javascript',
         collapsable: false,
         children: [
@@ -78,14 +87,6 @@ const config = {
           'articles/004_javascript/functionOverload',
           'articles/004_javascript/004013_80percent',
           'articles/004_javascript/004014_advantagesOfVirtualDom',
-        ]
-      },
-      {
-        title: '标准库',
-        collapsable: false,
-        children: [
-          'articles/004_javascript/standardLibrary/array',
-          'articles/004_javascript/standardLibrary/object',
         ]
       },
       {
@@ -124,6 +125,8 @@ const config = {
           'articles/011_engineering/011009_gitBestPractices',
           'articles/011_engineering/011010_microFe',
           'articles/011_engineering/011011_upload',
+          'articles/011_engineering/011012_webpack',
+          'articles/011_engineering/011013_i18ntester',
           ]
       },
       {

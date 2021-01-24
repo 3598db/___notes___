@@ -1,4 +1,6 @@
-# Object
+# :thinking:Object
+
+[[toc]]
 
 Object 构造函数创建一个对象包装器。
 
