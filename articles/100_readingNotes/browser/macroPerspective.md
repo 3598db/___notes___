@@ -1,4 +1,6 @@
-# 宏观视角下的浏览器
+# :thinking:宏观视角下的浏览器
+
+[[toc]]
 
 ## chrome多进程架构分工
 * 浏览器进程：主要负责界面显示、用户交互、子进程管理，同时提供存储等功能；
@@ -91,7 +93,7 @@ CSS继承就是每个DOM节点都包含有父节点的样式。总之，样式�
 
 并不是布局树的每个节点都包含一个图层，如果一个节点没有对应的层，那么这个节点就从属于父节点的图层。
 
-* 第一点，拥有层叠上下文属性的元素会被提升为单独的一层。［层叠上下文](https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Understanding_z_index) 
+* 第一点，拥有层叠上下文属性的元素会被提升为单独的一层。[层叠上下文](https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Understanding_z_index) 
 * 第二点，需要剪裁(clip)的地方也会被创建为图层。
 
 **（4）图层绘制**

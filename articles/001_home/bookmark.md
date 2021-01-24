@@ -1,4 +1,4 @@
-# BOOKMARK :vulcan_salute:
+# 书签 :vulcan_salute:
 
 ## 待完成
 * [front-end-manual](https://github.com/giscafer/front-end-manual/issues?page=2&q=is%3Aissue+is%3Aopen)
