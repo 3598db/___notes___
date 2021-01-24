@@ -14,7 +14,7 @@
 
 ## cookie有哪些属性
 
-## 模块化（AMD， CMD，CommonJS，ES Module，webpack）
+## 模块化（AMD， CMD，CommonJS，ES Module，webpack）对比
 
 ## cookie,session,localstorage,sessionstorage有什么区别
 
@@ -180,7 +180,7 @@ FunctionExectionContext = {
 
 >注意：在执行阶段，如果JavaScript引擎不能在源码中声明的实际位置找到let变量的值，它会被赋值为undefined。
 
-#### 2. 作用域链
+#### 3. 作用域链
 当JavaScript在运行的时候，它需要一些空间让它来存储本地变量（local variables）。我们将这些空间称为作用域对象（Scope object），有时候也称作LexicalEnvironment。例如，当你调用函数时，函数定义了一些本地变量，这些变量就被存储在一个作用域对象中。你可以将作用域函数想象成一个普通的JavaScript对象，但是有一个很大的区别就是你不能够直接在JavaScript当中直接获取这个对象。你只可以修改这个对象的属性，但是你不能够获取这个对象的引用。
 
 作用域对象的概念使得JavaScript和C、C++非常不同。在C、C++中，本地变量被保存在栈（stack）中。在JavaScript中，作用域对象是在堆中被创建的（至少表现出来的行为是这样的），所以在函数返回后它们也还是能够被访问到而不被销毁。
@@ -191,8 +191,7 @@ FunctionExectionContext = {
 
 在作用域链的最顶层的元素就是全局对象（Global Object）了。运行在全局环境的JavaScript代码中，作用域链始终只含有一个元素，那就是全局对象。所以，当你在全局环境中定义变量的时候，它们就会被定义到全局对象中。当函数被调用的时候，作用域链就会包含多个作用域对象。
 
-#### 3. this指向
-
+#### 4. this指向
 * **new绑定**   
 当函数使用new调用的时候，指向新创建的这个对象。
 * **显式绑定**   
@@ -206,9 +205,9 @@ FunctionExectionContext = {
 
 ## setTimeout、Promise、Async/Await 的区别
 
-## Async/Await 如何通过同步的方式实现异步
+## Async/Await如何通过同步的方式实现异步
 
-## JS 异步解决方案的发展历程以及优缺点
+## JS异步解决方案的发展历程以及优缺点
 
 ## Promise 构造函数是同步执行还是异步执行，那么 then 方法呢？
 
@@ -549,21 +548,6 @@ main();
 
 ## 在 JavaScript 可以有哪几种形式实现继承，各有什么优缺点？
 
-# this指向
-1.  **new绑定**：当函数使用new调用的时候，指向新创建的这个对象；
-2.  **显示绑定**：当使用call, apply时候传入的第一个参数作为this的指向，但如果传入的参数是null，就应用默认绑定规则；如果使用bind, 返回的新函数的this指向传入bind的第一个参数；
-3.  **隐式绑定**：当函数作为另一个对象的方法来调用的时候，this就指向这个对象；这种情况下要留意绑定丢失，当把一个对象的方法作为值赋值给另一个变量或者作为参数进行传递时，就会发生绑定丢失，从而应用默认绑定规则；如果通过多个object来链式调用这个函数，以最后一个obj为准，比如`a.b.fn()`，fn的this指向的是b；
-4.  **默认绑定**：函数单独调用，如果函数运行在严格模式下this就绑定到undefined，非严格模式下就绑定到window对象。注意这里的严格模式是指函数内部；而不是函数上层作用域；
-```javascript
-function test(){
-  'use strict' //内部
-  console.log(this) // undefined
-}
-```
-5. **箭头函数没有自己的this，箭头函数的this继承了上层函数的this指向**。
-
-# 节流与防抖函数
-
 ## 防抖函数
 在n秒内函数只被执行一次，如果在这个时间内再次被触发，则需要再次计算时间。
 
@@ -642,8 +626,6 @@ function throttle(fn, delay, atleast) {
 }
 ```
 
-# 上下文栈与作用域链
-
 ## 上下文栈
 上下文栈是存放执行环境的。执行环境定义了变量和函数能够访问的其他数据(存储在这个执行环境的变量对象上)，主要分为全局执行环境和函数执行环境。当执行到一个函数的时候就会将这个函数的执行环境压入这个执行栈，当函数执行完成，将就这个这个执行环境出栈，回到上层的执行环境。
 * 全局执行环境是栈最底部的一个执行环境，只会在应用程序退出（关闭网页或者浏览器）的时候才会退出
@@ -662,7 +644,7 @@ function throttle(fn, delay, atleast) {
 
 简而言之：作用域是变量查找的规则，作用域链定义了变量可以查找的范围。变量查找只能从当前作用域开始向上查找而不能向下, 并且变量的查找具有遮蔽效应，在作用域链上进行向上查找的时候，最先找到的同名变量会遮蔽更上层作用域链中的同名变量。
 
-# 闭包
+## 闭包
 无论通过何种方式将内部函数传递到所在的词法作用域以外，它都会持有对原始定义作用域的引用，无论在何处执行这个函数都会使用闭包。   
 如果一个函数在创建它的词法作用域之外执行，就会保持对当前词法作用域的引用，就会产生闭包。   
 本质上无论何时何地，如果将（访问它们各自词法作用域的）函数当做第一级的值类型到处传递，你就会看到闭包在这些函数中的应用。
@@ -683,99 +665,17 @@ fContext = {
 * 实现模块化
 * 实现属性的私有化
 
-# 函数柯里化
+## 函数柯里化
 
-# 内存泄漏
+## 内存泄漏
 常见的内存泄漏
 1. 意外的全局变量
 2. 被遗忘的计时器或回调函数
 3. 闭包
 
-# Polyfill - call apply bind & new
-```javascript
-// call
-Function.prototype._call = function (context, ...params) {
-  if (typeof context === 'object') {
-    context = context || window;
-  } else {
-    context = Object.create(null);
-  }
-  const fn = Symbol();
-  context[fn] = this;
-  const result = context[fn](...params);
-  delete context.fn;
+## 继承
 
-  return result;
-}
-
-// apply
-Function.prototype._apply = function(context, parameter) {
-  if (typeof context === 'object') {
-    context = context || window;
-  } else {
-    context = Object.create(null);
-  }
-  const fn = Symbol();
-  context[fn] = this;
-  const result = context[fn](...parameter);
-  delete context[fn];
-
-  return result;
-}
-
-// new
-function _new() {
-  let instance = {};
-  let shift = Array.prototype.shift;
-  let constructor = shift.call(arguments);
-
-  instace.__proto__ = constructor.prototype;
-
-  // 实现继承
-  let result = constructor.apply(instance, arguments);
-
-  return typeof result === 'object' ? result : instance;
-}
-
-// bind
-Function.prototype._bind = function (context) {
-
-  if (typeof this !== "function") {
-    throw new Error("Function.prototype.bind - what is trying to be bound is not callable");
-  }
-
-  var _this = this;
-  var args = Array.prototype.slice.call(arguments, 1);
-
-  var fNOP = function () {};
-
-  var fBound = function () {
-    var bindArgs = Array.prototype.slice.call(arguments);
-    return _this.apply(this instanceof fNOP ? this : context, args.concat(bindArgs));
-  }
-
-  fNOP.prototype = this.prototype;
-  fBound.prototype = new fNOP();
-  return fBound;
-}
-
-// instanceOf
-function instanceOf(L, R) {
-  var O = R.prototype;
-  L = L.__proto__;
-  while (true) {
-    if (L === null)
-      return false; 
-    if (O === L)
-      return true;
-    L = L.__proto__;
-  }
-}
-```
-
-# 继承
-
-## 1、原型链继承
+### 1、原型链继承
 构造函数、原型和实例之间的关系：每个构造函数都有一个原型对象，原型对象都包含一个指向构造函数的指针，而实例都包含一个原型对象的指针。
 
 继承的本质就是复制，即重写原型对象，代之以一个新类型的实例。
@@ -819,7 +719,7 @@ var instance2 = new SubType();
 alert(instance2.colors); //"red,blue,green,black"
 ```
 
-## 2、借用构造函数继承
+### 2、借用构造函数继承
 使用父类的构造函数来增强子类实例，等同于复制父类的实例给子类（不使用原型）
 ```javascript
 function  SuperType(){
@@ -842,7 +742,7 @@ alert(instance2.color);//"red,green,blue"
 * 只能继承父类的实例属性和方法，不能继承原型属性/方法
 * 无法实现复用，每个子类都有父类实例函数的副本，影响性能
 
-## 3、组合继承
+### 3、组合继承
 组合上述两种方法就是组合继承。用原型链实现对原型属性和方法的继承，用借用构造函数技术来实现实例属性的继承。
 ```javascript
 function SuperType(name){
@@ -887,7 +787,7 @@ instance2.sayAge(); //27
 * 第二次调用SuperType()：给instance1写入两个属性name，color。   
 实例对象instance1上的两个属性就屏蔽了其原型对象SubType.prototype的两个同名属性。所以，组合模式的缺点就是在使用子类创建实例对象时，其原型中会存在两份相同的属性/方法。
 
-## 4、原型式继承
+### 4、原型式继承
 利用一个空对象作为中介，将某个对象直接赋值给空对象构造函数的原型。
 ```javascript
 function object(obj){
@@ -918,7 +818,7 @@ alert(person.friends);   //"Shelby,Court,Van,Rob,Barbie"
 无法传递参数
 * 另外，ES5中存在Object.create()的方法，能够代替上面的object方法。
 
-## 5、寄生式继承
+### 5、寄生式继承
 核心：在原型式继承的基础上，增强对象，返回构造函数
 ```javascript
 function createAnother(original){
@@ -942,7 +842,7 @@ anotherPerson.sayHi(); //"hi"
 * 原型链继承多个实例的引用类型属性指向相同，存在篡改的可能。
 * 无法传递参数
 
-## 6、寄生组合式继承
+### 6、寄生组合式继承
 结合借用构造函数传递参数和寄生模式实现继承
 ```javascript
 function inheritPrototype(subType, superType){
@@ -984,7 +884,7 @@ instance2.colors.push("3"); // ["red", "blue", "green", "3"]
 
 这是最成熟的方法，也是现在库实现的方法
 
-## 7、混入方式继承多个对象
+### 7、混入方式继承多个对象
 ```javascript
 function MyClass() {
   SuperClass.call(this);
@@ -1004,7 +904,7 @@ MyClass.prototype.myMethod = function() {
 ```
 Object.assign会把 OtherSuperClass原型上的函数拷贝到 MyClass原型上，使 MyClass 的所有实例都可用 OtherSuperClass 的方法。
 
-## 8、ES6类继承extends
+### 8、ES6类继承extends
 extends关键字主要用于类声明或者类表达式中，以创建一个类，该类是另一个类的子类。其中constructor表示构造函数，一个类中只能有一个构造函数，有多个会报出SyntaxError错误,如果没有显式指定构造方法，则会添加默认的 constructor方法，使用例子如下。
 
 ```javascript
@@ -1072,7 +972,7 @@ function _inherits(subType, superType) {
   }
 }
 ```
-## 总结
+### 总结
 
 **1、函数声明和类声明的区别**   
 函数声明会提升，类声明不会。首先需要声明你的类，然后访问它，否则像下面的代码会抛出一个ReferenceError。
@@ -1087,7 +987,7 @@ class Rectangle {}
 * ES5的继承实质上是先创建子类的实例对象，然后再将父类的方法添加到`this`上（`Parent.call(this)`）.
 * ES6的继承有所不同，实质上是先创建父类的实例对象`this`，然后再用子类的构造函数修改`this`。因为子类没有自己的`this`对象，所以必须先调用父类的`super()`方法，否则新建实例报错。
 
-# 原型与原型链
+## 原型与原型链
 
 **我所理解的原型和原型链**
 
@@ -1101,9 +1001,7 @@ class Rectangle {}
 
 关于构造函数，每个普通函数都有一个`prototype`属性，如果它指向一个对象，那么当该构造函数实例化之后，该实例对象的`__proto__`就会指向构造函数的`prototype`对象。
 
-# 柯里化
-
-# let / const / var
+## let / const / var
 ||var|let|const|
 |---|---|---|---|
 |变量提升|Y|N|N|
@@ -1114,7 +1012,7 @@ class Rectangle {}
 |只申明不初始化|Y|Y|N|
 |重新赋值|Y|Y|N|
 
-# Iterator描述
+## Iterator描述
 如果使用 TypeScript 的写法，遍历器接口（Iterable）、指针对象（Iterator）和next方法返回值的规格可以描述如下。
 ```javascript
 interface Iterable {
@@ -1131,19 +1029,7 @@ interface IterationResult {
 }
 ```
 
-
-# let 和 const 命令
-
-# 变量的解构赋值
-# 字符串的扩展
-# 字符串的新增方法
-# 正则的扩展
-# 数值的扩展
-# 函数的扩展
-# 数组的扩展
-# 对象的扩展
-# 对象的新增方法
-# Symbol
+## Symbol
 1. Symbol 作为属性名，遍历对象的时候，该属性不会出现在for...in、for...of循环中，也不会被Object.keys()、Object.getOwnPropertyNames()、JSON.stringify()返回。
 
 但是，它也不是私有属性，有一个Object.getOwnPropertySymbols()方法，可以获取指定对象的所有 Symbol 属性名。该方法返回一个数组，成员是当前对象的所有用作属性名的 Symbol 值。
@@ -1157,7 +1043,6 @@ Symbol.toPrimitive -- 指向一个方法。该对象被转为原始类型的值�
 
 Symbol.toStringTag -- 指向一个方法。在该对象上面调用Object.prototype.toString方法时，如果这个属性存在，它的返回值会出现在toString方法返回的字符串之中，表示对象的类型。也就是说，这个属性可以用来定制[object Object]或[object Array]中object后面的那个字符串。
 
-# Set 和 Map 数据结构
 ## Set
 它类似于数组，但是成员的值都是唯一的，没有重复的值。
 
@@ -1184,10 +1069,10 @@ WeakSet 结构与 Set 类似，也是不重复的值的集合。但是，它与 
 首先，WeakSet 的成员只能是对象，而不能是其他类型的值；
 其次，WeakSet 中的对象都是弱引用，即垃圾回收机制不考虑 WeakSet 对该对象的引用，也就是说，如果其他对象都不再引用该对象，那么垃圾回收机制会自动回收该对象所占用的内存，不考虑该对象还存在于 WeakSet 之中。
 
-# Map
+## Map
 ES6 提供了 Map 数据结构。它类似于对象，也是键值对的集合，但是“键”的范围不限于字符串，各种类型的值（包括对象）都可以当作键。也就是说，Object 结构提供了“字符串—值”的对应，Map 结构提供了“值—值”的对应，是一种更完善的 Hash 结构实现。如果你需要“键值对”的数据结构，Map 比 Object 更合适。
 
-## 遍历方法
+### 遍历方法
 Map 结构原生提供三个遍历器生成函数和一个遍历方法。
 
  - Map.prototype.keys()：返回键名的遍历器。
@@ -1197,7 +1082,7 @@ Map 结构原生提供三个遍历器生成函数和一个遍历方法。
 
 需要特别注意的是，Map 的遍历顺序就是插入顺序。
 
-# WeakMap
+## WeakMap
 WeakMap结构与Map结构类似，也是用于生成键值对的集合。
 
 WeakMap与Map的区别有两点。
@@ -1205,24 +1090,3 @@ WeakMap与Map的区别有两点。
 首先，WeakMap只接受对象作为键名（null除外），不接受其他类型的值作为键名。
 
 其次，WeakMap的键名所指向的对象，不计入垃圾回收机制。
-
-# Proxy
-# Reflect
-# Promise 对象
-# Iterator 和 for...of 循环
-# Generator 函数的语法
-# Generator 函数的异步应用
-# async 函数
-# Class 的基本语法
-# Class 的继承
-# Module 的语法
-# Module 的加载实现
-
-# ArrayBuffer
-
-# Decorator
-
-
-
-
-
