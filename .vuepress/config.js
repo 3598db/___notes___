@@ -127,6 +127,7 @@ const config = {
           'articles/011_engineering/011011_upload',
           'articles/011_engineering/011012_webpack',
           'articles/011_engineering/011013_i18ntester',
+          'articles/011_engineering/011014_performanceOptimization',
           ]
       },
       {
