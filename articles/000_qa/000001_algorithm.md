@@ -2,14 +2,14 @@
 
 [[toc]]
 
-## 找出整型数组中乘积最大的三个数
+## 找出整型数组中乘积最大的三个数（leetcode#628 三个数的最大乘积）
 >给定一个包含整数的无序数组，要求找出乘积最大的三个数。
 解法：
 * 暴力n3遍历（n3）
 * 排序后求乘积 +++ 或 --+ （nlogn）
 * hashmap
 
-## 寻找连续数组中的缺失数 
+## 寻找连续数组中的缺失数（剑指 Offer 53 - II. 0～n-1中缺失的数字）
 >给定某无序数组，其包含了 n 个连续数字中的 n - 1 个，已知上下边界，要求以O(n)的复杂度找出缺失的数字。
 解法：
 * 通过等差数列求和公式`(max + min) * n / 2`求总和减数组元素总和即缺失数字
@@ -38,19 +38,62 @@
 
 ## 颠倒字符串
 >给定某个字符串，要求将其中单词倒转之后然后输出，譬如"Welcome to this Javascript Guide!" 应该输出为 "emocleW ot siht tpircsavaJ !ediuG"。
+* split + reverse + join
+* 双端队列
 
 ## 乱序同字母字符串
 >给定两个字符串，判断是否颠倒字母而成的字符串，譬如Mary与Army就是同字母而顺序颠倒
+* split + toLowerCase + sort
 
-## 用栈实现队列与用队列实现栈
+## 用栈实现队列（leetcode#232 用栈实现队列）
+* 双栈
 
-## 判断合法括号
+## 用队列实现栈（leetcode#225 用队列实现栈）
+* 双队列
+* 单队列
 
-## 二进制转换
+## 判断合法括号（leetcode#20 有效的括号）
+* 栈 + 哈希表
 
-## 二分查找
+## 二进制转换（leetcode#190 颠倒二进制位）
+
+## 二分查找（leetcode#704 二分查找）
+```js
+// 急需优化
+// 随便写的
+function lookup(nums, target) {
+  let len = nums.length;
+  let start = 0;
+  let end = len;
+
+  while (start <= end) {
+    if (nums[start] === target) {
+      return start;
+    } else if (nums[end] === target) {
+      return end;
+    }
+
+    const mid = Math.ceil((end + start) / 2);
+
+    if (nums[mid] > target) {
+      if (end === mid) return -1;
+      end = mid; 
+    } else if (nums[mid] < target) {
+      if (start === mid) return -1;
+      start = mid
+    } else if (nums[mid] === target) {
+      return mid;
+    } else {
+      return -1;
+    }
+  }
+}
+```
 
 ## 判断是否为2的指数值
+```js
+(i & (i - 1)) === 0
+```
 
 ## 介绍下深度优先遍历和广度优先遍历，如何实现？
 
@@ -59,18 +102,42 @@
 ## 算法手写题
 >已知如下数组： var arr = [ [1, 2, 2], [3, 4, 5, 5], [6, 7, 8, 9, [11, 12, [12, 13, [14] ] ] ], 10]; 编写一个程序将数组扁平化去并除其中重复部分数据，最终得到一个升序且不重复的数组
 
+```js
+function normalize(array) {
+  return array.reduce((acc, cur) => {
+    return Array.isArray(cur) ? [...acc, ...normalize(cur)] : [...acc, cur];
+  }, []);
+}
+```
+
 ## 两个数组合并成一个数组
 >请把两个数组 ['A1', 'A2', 'B1', 'B2', 'C1', 'C2', 'D1', 'D2'] 和 ['A', 'B', 'C', 'D']，合并为 ['A1', 'A2', 'A', 'B1', 'B2', 'B', 'C1', 'C2', 'C', 'D1', 'D2', 'D']。
 
 ## 实现 (5).add(3).minus(2) 输出 6 功能
+```js
+Number.prototype.add = function (num) {
+  return this + num;
+}
+Number.prototype.minus = function (num) {
+  return this - num;
+}
+```
 
 ## 冒泡排序如何实现，时间复杂度是多少，还可以如何改进？
+* 时间复杂度O(n2)
+* 循环一遍没有元素交换说明排序完成
 
 ## 某公司 1 到 12 月份的销售额存在一个对象里面
 >如下：{1:222, 2:123, 5:888}，请把数据处理为如下结构：[222, 123, null, null, 888, null, null, null, null, null, null, null]
-
-## 给定两个数组，写一个方法来计算它们的交集
->例如：给定 nums1 = [1, 2, 2, 1]，nums2 = [2, 2]，返回 [2, 2]。
+* 哈希表
+* 自己折腾的方法
+```js
+function to(data, months) {
+  const result = Array.prototype.slice.call({...Array(months + 1).fill(null), ...data, length: months + 1});
+  result.shift();
+  return result;
+}
+```
 
 ## 数组编程题
 >随机生成一个长度为 10 的整数类型的数组，例如 [2, 10, 3, 4, 5, 11, 10, 11, 20]，将其排列成一个新数组，要求新数组形式如下，例如 [[2, 3, 4, 5], [10, 11], [20]]。
@@ -214,8 +281,6 @@ var output = {
 >在一个字符串数组中有红、黄、蓝三种颜色的球，且个数不相等、顺序不一致，请为该数组排序。使得排序后数组中球的顺序为:黄、红、蓝。例如：红蓝蓝黄红黄蓝红红黄红，排序后为：黄黄黄红红红红红蓝蓝蓝。
 
 ## 反转链表，每 k 个节点反转一次，不足 k 就保持原有顺序
-
-## 求多个数组之间的交集
 
 ## 将 '10000000000' 形式的字符串，以每 3 位进行分隔展示 '10.000.000.000'
 

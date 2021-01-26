@@ -37,6 +37,8 @@ const config = {
           'articles/000_qa/000008_network',
           'articles/000_qa/000009_nodejs',
           'articles/000_qa/000010_open',
+          'articles/000_qa/000011_links',
+          'articles/000_qa/000012_pics',
         ]
       },
       {
