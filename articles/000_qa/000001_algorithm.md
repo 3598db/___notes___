@@ -143,22 +143,69 @@ function to(data, months) {
 >随机生成一个长度为 10 的整数类型的数组，例如 [2, 10, 3, 4, 5, 11, 10, 11, 20]，将其排列成一个新数组，要求新数组形式如下，例如 [[2, 3, 4, 5], [10, 11], [20]]。
 
 ## 如何把一个字符串的大小写取反（大写变小写小写变大写），例如 ’AbC' 变成 'aBc' 。
+* 利用正则替换每个字母转换成大写并和转换前比对是否一致，一致则转换成小写。
 
 ## 实现一个字符串匹配算法，从长度为 n 的字符串 S 中，查找是否存在字符串 T，T 的长度是 m，若存在返回所在位置。
 
 ## 旋转数组
+```js
+function ReverseArray(array) {
+  let i = 0;
+  while (2 * i <= array.length) {
+    const temp = array[i];
+    array[i] = array[array.length - 1 - i];
+    array[array.length - 1 - i] = temp;
+
+    i++
+  }
+  return array;
+}
+```
 
 ## 打印出 1~10000 之间的所有对称数
 
 ## 移动零
+```js
+function MoveZeros(array) {
+  let j = 0;
+  for (let i = 0; i < array.length; i ++) {
+    if (array[i] !== 0) {
+      const temp = array[j];
+      array[j] = array[i];
+      array[i] = temp;
+
+      j++;
+    }
+  }
+  return array;
+}
+```
 
 ## 两数之和
+```js
+function TwoSum(nums, target) {
+  const map = new Map();
+  for (let i = 0; i < nums.length; i ++) {
+    if (map.has(target - nums[i])) {
+      return [map.get(target - nums[i]), i];
+    } else {
+      map.set(nums[i], i);
+    }
+  }
+  return -1;
+}
+```
 
 ## 在输入框中如何判断输入的是一个正确的网址
 
 ## 实现 `convert` 方法，把原始 list 转换成树形结构，要求尽可能降低时间复杂度
 
 ## 实现模糊搜索结果的关键词高亮显示
+```js
+const reg = new RegExp(search, 'ig');
+const splitIconTypes = iconType.split(reg);
+const matchIconTypes = iconType.match(reg); 
+```
 
 ## 已知数据格式，实现一个函数 fn 找出链条中所有的父级 id
 
@@ -167,6 +214,13 @@ function to(data, months) {
 ## 编程算法题
 >用 JavaScript 写一个函数，输入 int 型，返回整数逆序后的字符串。如：输入整型 1234，返回字符串“4321”。要求必须使用递归函数调用，不能用全局变量，输入函数必须只有一个参数传入，必须返回字符串。
 
+```js
+function reverse(s) {
+  s = '' + s;
+  return s.length === 1 ? s : s[s.length - 1] + reverse(s.substr(0, s.length - 1));
+}
+```
+
 ## 修改以下 print 函数，使之输出 0 到 99，或者 99 到 0
 >要求： 
 >1. 只能修改 setTimeout 到 Math.floor(Math.random() * 1000 的代码 
@@ -174,9 +228,9 @@ function to(data, months) {
 >3. 不能使用全局变量
 ```js
 function print(n){
-  setTimeout(() => {
+  setTimeout((() => {
     console.log(n);
-  }, Math.floor(Math.random() * 1000));
+  })(), Math.floor(Math.random() * 1000));
 }
 
 for(var i = 0; i < 100; i++){
@@ -185,6 +239,16 @@ for(var i = 0; i < 100; i++){
 ```
 
 ## 不用加减乘除运算符，求整数的7倍
+```js
+function bitAdd(m, n) {
+  while (m) {
+    [m, n] = [(m & n) << 1, m ^ n];
+  }
+  return n;
+}
+
+let multiply7 = (num) => bitAdd(num << 3, -num);
+```
 
 ## 模拟实现一个 localStorage
 
@@ -227,6 +291,19 @@ var output = {
 }
 ```
 
+```js
+const result = {};
+function convert(entry, path = '') {
+  for (let [key, value] of Object.entries(entry)) {
+    if (typeof value === 'object') {
+      convert(value, !path ? path : path + '.' + key);
+    } else {
+      result[path + '.' + key] = value;
+    }
+  }
+}
+```
+
 ## 编程题，写个程序把 entry 转换成如下对象（跟昨日题目相反）
 ```js
 var entry = {
@@ -248,6 +325,28 @@ var output = {
     },
     e: 'ae'
   }
+}
+```
+
+```js
+function convert(entry) {
+  const result = {};
+  for (let [key, value] of Object.entries(entry)) {
+    const keys = key.split('.');
+    let o = result;
+    let len = keys.length;
+    keys.forEach((key, index) => {
+      if (!o(key)) {
+        if (index !== len - 1) {
+          o[key] = {};
+        } else {
+          o[key] = value;
+        }
+      }
+      o = o[key];
+    })
+  }
+  return result;
 }
 ```
 
